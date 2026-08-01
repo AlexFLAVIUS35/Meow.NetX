@@ -13,10 +13,16 @@ Improvements over the original meow.net launcher featuring more features (WIP)
   
 - Uses Windows File Explorer To Search For      Meow.Net faster
 
+## Roadmap
+
+- [❌] Multiple installations
+- [❌] Steam App ID switcher
+- [❌] Custom launcher themes
+- [❌] Launch options editor
+
 ## -- Installation
 
 # NO Installation command/package IS AVAILABLE YET.
 
 ## Disclaimer
-
 Meow.NetX is an independent project and is not affiliated with Rec Room or the original Meow.Net project.
