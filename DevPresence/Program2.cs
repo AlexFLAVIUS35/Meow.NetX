@@ -9,11 +9,7 @@ string currentStatus = "Idle";
 
 string[] watchPaths =
 {
-    @"C:\Users\User\Meow.NetX\Installer.Wix",
-    @"C:\Users\User\Meow.NetX\PluginLoader",
-    @"C:\Users\User\Meow.NetX\Meow.NetX",
-    @"C:\Users\User\Meow.NetX\Patcher",
-    @"C:\Users\User\Meow.NetX\TestPlugin"
+    @"C:\Users\User\Meow.NetX\",
 };
 
 foreach (var path in watchPaths)
