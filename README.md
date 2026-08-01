@@ -34,7 +34,7 @@ Improvements over the original meow.net launcher featuring more features (WIP)
 
 # NO Installation command/package IS AVAILABLE YET.
 
-## Contributing
+## -- Contributing
 
 Contributions are welcome! You can go ahead submit issues to report bugs or suggest features or submit a pull request if you'd like to contribute code.
 
