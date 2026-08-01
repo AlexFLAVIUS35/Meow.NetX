@@ -40,12 +40,26 @@ Improvements over the original meow.net launcher featuring more features (WIP)
 -  `-` Automatic update checker 
 
 ## -- Installation
+## Installation
 
-# NO Installation command/package IS AVAILABLE YET.
+**From source**
+
+Requirements:
+- .NET 10 SDK
+- Git
+
+Clone the repository:
+
+```bash
+git clone https://github.com/AlexFLAVIUS35/Meow.NetX.git
+cd Meow.NetX
+dotnet build
 
 ## -- Contributing
 
 Contributions are welcome! You can go ahead and submit issues to report bugs or suggest features or submit a pull request if you'd like to contribute code.
+
+---
 
 ## -- Disclaimer
 Meow.NetX is an independent open-source project. It is not affiliated with, endorsed by, or sponsored by Rec Room or the original Meow.Net project. All trademarks belong to their respective owners.
