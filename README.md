@@ -56,7 +56,6 @@ cd Meow.NetX
 dotnet build
 ```
 
----
 
 ## -- Contributing
 
