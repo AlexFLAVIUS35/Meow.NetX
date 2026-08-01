@@ -1,12 +1,21 @@
 using System;
+using System.IO;
 
-string? folder = Environment.GetEnvironmentVariable("INSTALLFOLDER");
-
-if (string.IsNullOrEmpty(folder))
+if (args.Length == 0)
 {
+    Console.WriteLine("No folder provided.");
     return 1;
 }
 
-return File.Exists(Path.Combine(folder, "Launcher.exe"))
-    ? 0
-    : 1;
+string folder = args[0];
+
+string launcher = Path.Combine(folder, "Launcher.exe");
+
+if (File.Exists(launcher))
+{
+    Console.WriteLine("Launcher.exe found.");
+    return 0;
+}
+
+Console.WriteLine("Launcher.exe missing.");
+return 1;
