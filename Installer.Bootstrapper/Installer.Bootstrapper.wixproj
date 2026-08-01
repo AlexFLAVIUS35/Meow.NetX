@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <InstallerPlatform>x64</InstallerPlatform>
+    <OutputType>Bundle</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
