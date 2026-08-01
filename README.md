@@ -10,7 +10,7 @@ Improvements over the original meow.net launcher featuring more features (WIP)
   
 - Multiple Installations
   
-- Uses Windows File Explorer To Switch For      Meow.Net faster
+- Uses Windows File Explorer To Search For      Meow.Net faster
 
 ## -- Installation
 
