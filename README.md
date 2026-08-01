@@ -27,7 +27,7 @@ Improvements over the original meow.net launcher featuring more features (WIP)
 - `*` = In Progress
 - `-` = Not Started
 - `#` = Completed
-
+---
 -  `-` Multiple installations
 -  `-` Steam App ID switcher
 -  `-` Custom launcher themes
