@@ -1,5 +1,5 @@
 using System.Windows;
-using System.Windows.Forms;
+using Forms = System.Windows.Forms;
 
 namespace Installer.Bootstrapper.UI;
 
@@ -12,9 +12,9 @@ public partial class MainWindow : Window
 
     private void Browse_Click(object sender, RoutedEventArgs e)
     {
-        using var dialog = new FolderBrowserDialog();
+        using var dialog = new Forms.FolderBrowserDialog();
 
-        if (dialog.ShowDialog() == DialogResult.OK)
+        if (dialog.ShowDialog() == Forms.DialogResult.OK)
         {
             FolderBox.Text = dialog.SelectedPath;
 
@@ -30,7 +30,7 @@ public partial class MainWindow : Window
 
     private void Install_Click(object sender, RoutedEventArgs e)
     {
-        MessageBox.Show(
+        System.Windows.MessageBox.Show(
             "Installing to:\n" + FolderBox.Text
         );
     }
