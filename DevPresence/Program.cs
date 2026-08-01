@@ -1,16 +1,28 @@
 using DiscordRPC;
+using System.IO;
 
 var rpc = new DiscordRpcClient("1533218071148495038");
 
 rpc.Initialize();
 
-rpc.SetPresence(new RichPresence
+string statusFile = "status.txt";
+
+while (true)
 {
-    Details = "Working on Meow.NetX",
-    State = "Editing code"
-});
+    string status = File.Exists(statusFile)
+        ? File.ReadAllText(statusFile)
+        : "Idle";
 
-Console.WriteLine("Discord Rich Presence running.");
-Console.WriteLine("Press ENTER to exit.");
+    rpc.SetPresence(new RichPresence
+    {
+        Details = "Working on Meow.NetX",
+        State = status,
+        Assets = new Assets
+        {
+            LargeImageKey = "meownet",
+            LargeImageText = "Meow.NetX"
+        }
+    });
 
-Console.ReadLine();
+    Thread.Sleep(2000);
+}
