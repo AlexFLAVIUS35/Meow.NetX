@@ -15,9 +15,10 @@
     </BootstrapperApplication>
 
     <Chain>
-      <MsiPackage SourceFile="Installer.Wix\bin\Debug\Installer.Wix.msi" />
+      <MsiPackage SourceFile="..\Installer.Wix\bin\Debug\Installer.Wix.msi" />
     </Chain>
 
   </Bundle>
 
 </Wix>
+
