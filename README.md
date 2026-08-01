@@ -1,6 +1,7 @@
 # Meow.NetX
 
 ![Alternative text](https://github.com/AlexFLAVIUS35/Meow.NetX/blob/dea6d3b1ba137da4e9f9b4d565f2112d7e294506/meowmeowlogo.png)
+<sub>Thanks To @dipsydispy for the amazing thumbnail.
 
 Improvements over the original meow.net launcher featuring more features (WIP)
 
@@ -15,4 +16,3 @@ Improvements over the original meow.net launcher featuring more features (WIP)
 ## -- Installation
 
 # NO Installation command/package IS AVAILABLE YET.
-<sub>Thanks To @dipsydispy for the amazing thumbnail.
