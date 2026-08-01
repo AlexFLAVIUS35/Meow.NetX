@@ -1,4 +1,4 @@
-# Meow.NetX
+# -- Meow.NetX
 
 ![Alternative text](https://github.com/AlexFLAVIUS35/Meow.NetX/blob/dea6d3b1ba137da4e9f9b4d565f2112d7e294506/meowmeowlogo.png)
 <sub>Thanks To @dipsydispy for the amazing thumbnail.
@@ -13,7 +13,7 @@ Improvements over the original meow.net launcher featuring more features (WIP)
   
 - Uses Windows File Explorer To Search For      Meow.Net faster
 
-## Roadmap
+## -- Roadmap
 
 - [  ] Multiple installations
 - [  ] Steam App ID switcher
@@ -24,5 +24,5 @@ Improvements over the original meow.net launcher featuring more features (WIP)
 
 # NO Installation command/package IS AVAILABLE YET.
 
-## Disclaimer
+## -- Disclaimer
 Meow.NetX is an independent project and is not affiliated with Rec Room or the original Meow.Net project.
