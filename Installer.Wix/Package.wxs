@@ -1,0 +1,49 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+
+  <Package
+    Name="Meow.NetX"
+    Manufacturer="AlexFLAVIUS35"
+    Version="0.1.0"
+    UpgradeCode="8B6E6F4A-4D7A-4B0A-9F4B-2D8C1A5E7F90">
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of Meow.NetX is already installed." />
+
+    <MediaTemplate />
+
+    <ui:WixUI Id="WixUI_InstallDir" />
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />`r`n`r`n
+
+    <Feature Id="MainFeature" Title="Meow.NetX" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+
+  </Package>
+
+  <Fragment>
+
+    <StandardDirectory Id="TARGETDIR" />
+
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+
+      <Component Id="PluginLoaderComponent"
+                 Bitness="always64"
+                 Guid="7F6B8A5D-4D2F-4A7B-9E6C-123456789ABC">
+
+        <File Source="..\PluginLoader\bin\Debug\net10.0\PluginLoader.dll" />
+
+      </Component>
+
+    </ComponentGroup>
+
+  </Fragment>
+
+</Wix>
+
+
+
+
+
+
+
