@@ -16,3 +16,7 @@ Improvements over the original meow.net launcher featuring more features (WIP)
 ## -- Installation
 
 # NO Installation command/package IS AVAILABLE YET.
+
+## Disclaimer
+
+Meow.NetX is an independent project and is not affiliated with Rec Room or the original Meow.Net project.
