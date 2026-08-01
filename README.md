@@ -40,7 +40,6 @@ Improvements over the original meow.net launcher featuring more features (WIP)
 -  `-` Automatic update checker 
 
 ## -- Installation
-## Installation
 
 -- **From source**
 
