@@ -14,4 +14,4 @@ Improvements over the original meow.net launcher featuring more features (WIP)
 
 ## -- Installation
 
-# NO Installation command IS AVAILABLE YET.
+# NO Installation command/package IS AVAILABLE YET.
