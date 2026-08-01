@@ -1,0 +1,15 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+
+  <Fragment>
+
+    <Property Id="MEOWNETLAUNCHERFOUND">
+      <DirectorySearch Id="LauncherFolderSearch"
+                       Path="[INSTALLFOLDER]"
+                       Depth="0">
+        <FileSearch Name="Launcher.exe" />
+      </DirectorySearch>
+    </Property>
+
+  </Fragment>
+
+</Wix>
