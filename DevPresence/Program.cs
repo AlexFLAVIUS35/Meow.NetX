@@ -1,70 +1,42 @@
 using DiscordRPC;
-using System.IO;
+using System.Diagnostics;
 
 var rpc = new DiscordRpcClient("1533218071148495038");
 
 rpc.Initialize();
 
-string currentStatus = "Idle";
-System.Threading.Timer? updateTimer = null;
-
-void UpdateStatus(string action, string file)
-{
-    currentStatus = $"{action} {file}";
-
-    updateTimer?.Dispose();
-
-    updateTimer = new System.Threading.Timer(_ =>
-    {
-        currentStatus = "Idle";
-    }, null, 10000, System.Threading.Timeout.Infinite);
-}
-
-string[] watchPaths =
-{
-    @"C:\Users\User\Meow.NetX\Installer.Wix",
-    @"C:\Users\User\Meow.NetX\PluginLoader",
-    @"C:\Users\User\Meow.NetX\Meow.NetX",
-    @"C:\Users\User\Meow.NetX\Patcher",
-    @"C:\Users\User\Meow.NetX\TestPlugin"
-};
-
-foreach (var path in watchPaths)
-{
-    if (!Directory.Exists(path))
-        continue;
-
-    var watcher = new FileSystemWatcher(path)
-    {
-        IncludeSubdirectories = true,
-        NotifyFilter = NotifyFilters.FileName |
-                       NotifyFilters.LastWrite
-    };
-
-    watcher.Changed += (s, e) =>
-    {
-        UpdateStatus("Editing", Path.GetFileName(e.FullPath));
-    };
-
-    watcher.Created += (s, e) =>
-    {
-        UpdateStatus("Created", Path.GetFileName(e.FullPath));
-    };
-
-    watcher.Renamed += (s, e) =>
-    {
-        UpdateStatus("Renamed", Path.GetFileName(e.FullPath));
-    };
-
-    watcher.EnableRaisingEvents = true;
-}
+string status = "Waiting for CMD";
 
 while (true)
 {
+    try
+    {
+        var history = Process.Start(new ProcessStartInfo
+        {
+            FileName = "cmd",
+            Arguments = "/c doskey /history",
+            RedirectStandardOutput = true,
+            UseShellExecute = false,
+            CreateNoWindow = true
+        });
+
+        string output = history?.StandardOutput.ReadToEnd() ?? "";
+
+        var lines = output
+            .Split('\n', StringSplitOptions.RemoveEmptyEntries);
+
+        if (lines.Length > 0)
+            status = "CMD: " + lines[^1].Trim();
+    }
+    catch
+    {
+        status = "CMD active";
+    }
+
     rpc.SetPresence(new RichPresence
     {
         Details = "Working on Meow.NetX",
-        State = currentStatus,
+        State = status,
         Assets = new Assets
         {
             LargeImageKey = "meownet",
@@ -72,6 +44,5 @@ while (true)
         }
     });
 
-    Thread.Sleep(2000);
+    Thread.Sleep(3000);
 }
-
