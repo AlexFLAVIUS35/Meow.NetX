@@ -1,8 +1,10 @@
-# <div align="center">
+<div align="center">
 
 # Meow.NetX
 
-### Next-generation launcher for Meow.Net
+An enhanced launcher for Meow.Net.
+
+---
 
 </div>
 
