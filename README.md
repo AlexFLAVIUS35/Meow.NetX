@@ -15,3 +15,4 @@ Improvements over the original meow.net launcher featuring more features (WIP)
 ## -- Installation
 
 # NO Installation command/package IS AVAILABLE YET.
+<sub>Thanks To @dipsydispy for the amazing thumbnail.
