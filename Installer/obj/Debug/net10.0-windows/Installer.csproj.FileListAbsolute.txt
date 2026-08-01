@@ -1,0 +1,14 @@
+/mnt/sdcard/rawr/Meow.NetX/Installer/bin/Debug/net10.0-windows/Installer
+/mnt/sdcard/rawr/Meow.NetX/Installer/bin/Debug/net10.0-windows/Installer.deps.json
+/mnt/sdcard/rawr/Meow.NetX/Installer/bin/Debug/net10.0-windows/Installer.runtimeconfig.json
+/mnt/sdcard/rawr/Meow.NetX/Installer/bin/Debug/net10.0-windows/Installer.dll
+/mnt/sdcard/rawr/Meow.NetX/Installer/bin/Debug/net10.0-windows/Installer.pdb
+/mnt/sdcard/rawr/Meow.NetX/Installer/obj/Debug/net10.0-windows/Installer.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/sdcard/rawr/Meow.NetX/Installer/obj/Debug/net10.0-windows/Installer.AssemblyInfoInputs.cache
+/mnt/sdcard/rawr/Meow.NetX/Installer/obj/Debug/net10.0-windows/Installer.AssemblyInfo.cs
+/mnt/sdcard/rawr/Meow.NetX/Installer/obj/Debug/net10.0-windows/Installer.csproj.CoreCompileInputs.cache
+/mnt/sdcard/rawr/Meow.NetX/Installer/obj/Debug/net10.0-windows/Installer.dll
+/mnt/sdcard/rawr/Meow.NetX/Installer/obj/Debug/net10.0-windows/refint/Installer.dll
+/mnt/sdcard/rawr/Meow.NetX/Installer/obj/Debug/net10.0-windows/Installer.pdb
+/mnt/sdcard/rawr/Meow.NetX/Installer/obj/Debug/net10.0-windows/Installer.genruntimeconfig.cache
+/mnt/sdcard/rawr/Meow.NetX/Installer/obj/Debug/net10.0-windows/ref/Installer.dll
