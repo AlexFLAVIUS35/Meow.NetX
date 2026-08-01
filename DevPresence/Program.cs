@@ -6,6 +6,19 @@ var rpc = new DiscordRpcClient("1533218071148495038");
 rpc.Initialize();
 
 string currentStatus = "Idle";
+System.Threading.Timer? updateTimer = null;
+
+void UpdateStatus(string action, string file)
+{
+    currentStatus = $"{action} {file}";
+
+    updateTimer?.Dispose();
+
+    updateTimer = new System.Threading.Timer(_ =>
+    {
+        currentStatus = "Idle";
+    }, null, 10000, System.Threading.Timeout.Infinite);
+}
 
 string[] watchPaths =
 {
@@ -30,17 +43,17 @@ foreach (var path in watchPaths)
 
     watcher.Changed += (s, e) =>
     {
-        currentStatus = $"Edited {Path.GetFileName(e.FullPath)}";
+        UpdateStatus("Editing", Path.GetFileName(e.FullPath));
     };
 
     watcher.Created += (s, e) =>
     {
-        currentStatus = $"Created {Path.GetFileName(e.FullPath)}";
+        UpdateStatus("Created", Path.GetFileName(e.FullPath));
     };
 
     watcher.Renamed += (s, e) =>
     {
-        currentStatus = $"Renamed {Path.GetFileName(e.FullPath)}";
+        UpdateStatus("Renamed", Path.GetFileName(e.FullPath));
     };
 
     watcher.EnableRaisingEvents = true;
@@ -61,3 +74,4 @@ while (true)
 
     Thread.Sleep(2000);
 }
+
