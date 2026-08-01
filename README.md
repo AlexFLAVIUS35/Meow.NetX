@@ -59,7 +59,7 @@ dotnet build
 
 -- **From releases**
 
-NO Installation package IS AVAILABLE YET.
+NO RELEASE INSTALLATION IS AVAILABLE YET.
 
 
 ## -- Contributing
