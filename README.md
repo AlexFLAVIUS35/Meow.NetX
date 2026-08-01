@@ -56,6 +56,10 @@ cd Meow.NetX
 dotnet build
 ```
 
+**From releases**
+
+# NO Installation package IS AVAILABLE YET.
+
 
 ## -- Contributing
 
