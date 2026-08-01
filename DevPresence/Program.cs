@@ -50,12 +50,19 @@ while (true)
 {
     rpc.SetPresence(new RichPresence
     {
-        Details = "Working on Meow.NetX Check Out The Github https://github.com/AlexFLAVIUS35/Meow.NetX/",
+        Details = "Working on Meow.NetX/",
         State = currentStatus,
         Assets = new Assets
         {
             LargeImageKey = "meowmeowlogo",
             LargeImageText = "meowmeowlogo"
+        },
+    Buttons = new[]
+    {
+        new Button
+        {
+            Label = "Check Out The PROJECT!!!",
+            Url = "https://github.com/AlexFLAVIUS35/Meow.NetX/"
         }
     });
 
