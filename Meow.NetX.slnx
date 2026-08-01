@@ -3,4 +3,5 @@
   <Project Path="Meow.NetX/Meow.NetX.csproj" />
   <Project Path="Patcher/Patcher.csproj" />
   <Project Path="PluginLoader/PluginLoader.csproj" />
+  <Project Path="TestPlugin/TestPlugin.csproj" />
 </Solution>
