@@ -50,7 +50,7 @@ while (true)
 {
     rpc.SetPresence(new RichPresence
     {
-        Details = "Working on Meow.NetX",
+        Details = "Working on Meow.NetX Check Out The Github https://github.com/AlexFLAVIUS35/Meow.NetX/",
         State = currentStatus,
         Assets = new Assets
         {
