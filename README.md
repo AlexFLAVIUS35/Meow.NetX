@@ -2,7 +2,7 @@
 
 # Meow.NetX
 
-An enhanced launcher for Meow.Net.
+An enhanced Plugin for Meow.Net Launcher.
 
 ---
 
