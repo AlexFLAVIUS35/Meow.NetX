@@ -15,10 +15,10 @@ Improvements over the original meow.net launcher featuring more features (WIP)
 
 ## Roadmap
 
-- [ X ] Multiple installations
-- [ X ] Steam App ID switcher
-- [ X ] Custom launcher themes
-- [ X ] Launch options editor
+- [ - ] Multiple installations
+- [ - ] Steam App ID switcher
+- [ - ] Custom launcher themes
+- [ - ] Launch options editor
 
 ## -- Installation
 
