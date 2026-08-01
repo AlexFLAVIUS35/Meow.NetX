@@ -1,42 +1,57 @@
 using DiscordRPC;
-using System.Diagnostics;
+using System.IO;
 
 var rpc = new DiscordRpcClient("1533218071148495038");
 
 rpc.Initialize();
 
-string status = "Waiting for CMD";
+string currentStatus = "Idle";
+
+string[] watchPaths =
+{
+    @"C:\Users\User\Meow.NetX\Installer.Wix",
+    @"C:\Users\User\Meow.NetX\PluginLoader",
+    @"C:\Users\User\Meow.NetX\Meow.NetX",
+    @"C:\Users\User\Meow.NetX\Patcher",
+    @"C:\Users\User\Meow.NetX\TestPlugin"
+};
+
+foreach (var path in watchPaths)
+{
+    if (!Directory.Exists(path))
+        continue;
+
+    var watcher = new FileSystemWatcher(path)
+    {
+        IncludeSubdirectories = true,
+        NotifyFilter = NotifyFilters.FileName |
+                       NotifyFilters.LastWrite
+    };
+
+    watcher.Changed += (s, e) =>
+    {
+        currentStatus = $"Edited {Path.GetFileName(e.FullPath)}";
+    };
+
+    watcher.Created += (s, e) =>
+    {
+        currentStatus = $"Created {Path.GetFileName(e.FullPath)}";
+    };
+
+    watcher.Renamed += (s, e) =>
+    {
+        currentStatus = $"Renamed {Path.GetFileName(e.FullPath)}";
+    };
+
+    watcher.EnableRaisingEvents = true;
+}
 
 while (true)
 {
-    try
-    {
-        var history = Process.Start(new ProcessStartInfo
-        {
-            FileName = "cmd",
-            Arguments = "/c doskey /history",
-            RedirectStandardOutput = true,
-            UseShellExecute = false,
-            CreateNoWindow = true
-        });
-
-        string output = history?.StandardOutput.ReadToEnd() ?? "";
-
-        var lines = output
-            .Split('\n', StringSplitOptions.RemoveEmptyEntries);
-
-        if (lines.Length > 0)
-            status = "CMD: " + lines[^1].Trim();
-    }
-    catch
-    {
-        status = "CMD active";
-    }
-
     rpc.SetPresence(new RichPresence
     {
         Details = "Working on Meow.NetX",
-        State = status,
+        State = currentStatus,
         Assets = new Assets
         {
             LargeImageKey = "meownet",
@@ -44,5 +59,5 @@ while (true)
         }
     });
 
-    Thread.Sleep(3000);
+    Thread.Sleep(2000);
 }
