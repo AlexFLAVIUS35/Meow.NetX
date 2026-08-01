@@ -9,9 +9,9 @@
                   Return="check" />
 
     <InstallExecuteSequence>
-      <Custom Action="RunLauncherCheck" Before="InstallFiles">
-        <![CDATA[NOT Installed]]>
-      </Custom>
+      <Custom Action="RunLauncherCheck"
+              Before="InstallFiles"
+              Condition="NOT Installed" />
     </InstallExecuteSequence>
 
   </Fragment>
