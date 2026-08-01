@@ -14,6 +14,7 @@
     <ui:WixUI Id="WixUI_InstallDir" />
 
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+<Property Id="MEOWNETLAUNCHERFOUND" Secure="yes" />
 
     <Feature Id="MainFeature" Title="Meow.NetX" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
@@ -41,6 +42,7 @@
   </Fragment>
 
 </Wix>
+
 
 
 
