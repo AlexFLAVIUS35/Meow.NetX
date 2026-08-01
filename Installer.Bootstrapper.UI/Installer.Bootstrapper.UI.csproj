@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="WixToolset.Bal.wixext" Version="7.0.0" />
     <PackageReference Include="WixToolset.BootstrapperApplicationApi" Version="7.0.0" />
   </ItemGroup>
 
