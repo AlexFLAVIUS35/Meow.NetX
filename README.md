@@ -55,6 +55,7 @@ git clone https://github.com/AlexFLAVIUS35/Meow.NetX.git
 cd Meow.NetX
 dotnet build
 ```
+---
 
 **From releases**
 
