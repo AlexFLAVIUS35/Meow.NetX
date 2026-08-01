@@ -1,0 +1,16 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+
+  <Fragment>
+
+    <Binary Id="LauncherCheckExe"
+            SourceFile="..\LauncherCheck\bin\Release\net10.0\LauncherCheck.exe" />
+
+    <CustomAction Id="RunLauncherCheck"
+                  Execute="immediate"
+                  Return="check"
+                  BinaryRef="LauncherCheckExe"
+                  ExeCommand="[INSTALLFOLDER]" />
+
+  </Fragment>
+
+</Wix>
