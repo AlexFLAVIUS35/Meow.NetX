@@ -1,0 +1,23 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal">
+
+  <Bundle
+    Name="Meow.NetX"
+    Version="0.1.0"
+    Manufacturer="AlexFLAVIUS35"
+    UpgradeCode="C1D2E3F4-1111-4444-8888-123456789ABC">
+
+    <BootstrapperApplication>
+      <bal:WixStandardBootstrapperApplication
+          LicenseUrl=""
+          Theme="hyperlinkLicense"
+          SuppressOptionsUI="yes" />
+    </BootstrapperApplication>
+
+    <Chain>
+      <MsiPackage SourceFile="Installer.Wix\bin\Debug\Installer.Wix.msi" />
+    </Chain>
+
+  </Bundle>
+
+</Wix>
