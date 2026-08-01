@@ -42,7 +42,7 @@ Improvements over the original meow.net launcher featuring more features (WIP)
 ## -- Installation
 ## Installation
 
-**From source**
+-- **From source**
 
 Requirements:
 - .NET 10 SDK
@@ -55,9 +55,8 @@ git clone https://github.com/AlexFLAVIUS35/Meow.NetX.git
 cd Meow.NetX
 dotnet build
 ```
----
 
-**From releases**
+-- **From releases**
 
 # NO Installation package IS AVAILABLE YET.
 
