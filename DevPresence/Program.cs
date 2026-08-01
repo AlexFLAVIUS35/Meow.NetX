@@ -54,8 +54,8 @@ while (true)
         State = currentStatus,
         Assets = new Assets
         {
-            LargeImageKey = "meownet",
-            LargeImageText = "Meow.NetX"
+            LargeImageKey = "meowmeowlogo",
+            LargeImageText = "meowmeowlogo"
         }
     });
 
