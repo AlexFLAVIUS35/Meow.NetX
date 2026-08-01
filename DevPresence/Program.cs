@@ -63,7 +63,9 @@ while (true)
         {
             Label = "Check Out The PROJECT!!!",
             Url = "https://github.com/AlexFLAVIUS35/Meow.NetX/"
+            }
         }
+    });
 
     Thread.Sleep(2000);
 }
