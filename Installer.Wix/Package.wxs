@@ -36,20 +36,12 @@
         <File Source="..\PluginLoader\bin\Debug\net10.0\PluginLoader.dll" />
 
       </Component>
-
-    
-      <Component Id="LauncherCheckComponent"
-                 Bitness="always64"
-                 Guid="A2C7E5D1-3B7E-4F9A-8D11-5C2A9B8E1234">
-
-        <File Source="..\LauncherCheck\bin\Release\net10.0\LauncherCheck.exe" />
-
-      </Component>
 </ComponentGroup>
 
   </Fragment>
 
 </Wix>
+
 
 
 
