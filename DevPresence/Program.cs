@@ -6,8 +6,16 @@ var rpc = new DiscordRpcClient("1533218071148495038");
 rpc.Initialize();
 
 string repoPath = @"C:\Users\User\Meow.NetX";
-
 string currentStatus = "Idle";
+
+bool ShouldIgnore(string path)
+{
+    return path.Contains(@"\.git\") ||
+           path.Contains(@"\bin\") ||
+           path.Contains(@"\obj\") ||
+           path.Contains("auto-git-sync.ps1") ||
+           path.Contains("auto-watch-sync.ps1");
+}
 
 using var watcher = new FileSystemWatcher(repoPath)
 {
@@ -17,17 +25,20 @@ using var watcher = new FileSystemWatcher(repoPath)
 
 watcher.Changed += (s, e) =>
 {
-    currentStatus = $"Editing {Path.GetFileName(e.FullPath)}";
+    if (!ShouldIgnore(e.FullPath))
+        currentStatus = $"Editing {Path.GetFileName(e.FullPath)}";
 };
 
 watcher.Created += (s, e) =>
 {
-    currentStatus = $"Created {Path.GetFileName(e.FullPath)}";
+    if (!ShouldIgnore(e.FullPath))
+        currentStatus = $"Created {Path.GetFileName(e.FullPath)}";
 };
 
 watcher.Renamed += (s, e) =>
 {
-    currentStatus = $"Renamed {Path.GetFileName(e.FullPath)}";
+    if (!ShouldIgnore(e.FullPath))
+        currentStatus = $"Renamed {Path.GetFileName(e.FullPath)}";
 };
 
 watcher.EnableRaisingEvents = true;
