@@ -13,7 +13,7 @@
 
     <ui:WixUI Id="WixUI_InstallDir" />
 
-    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />`r`n`r`n
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
 
     <Feature Id="MainFeature" Title="Meow.NetX" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
@@ -23,7 +23,9 @@
 
   <Fragment>
 
-    <StandardDirectory Id="TARGETDIR" />
+    <StandardDirectory Id="TARGETDIR">
+      <Directory Id="INSTALLFOLDER" Name="Meow.Net Launcher" />
+</StandardDirectory>
 
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 
@@ -40,6 +42,7 @@
   </Fragment>
 
 </Wix>
+
 
 
 
