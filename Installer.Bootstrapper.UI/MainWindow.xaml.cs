@@ -1,23 +1,37 @@
-﻿using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Forms;
 
 namespace Installer.Bootstrapper.UI;
 
-/// <summary>
-/// Interaction logic for MainWindow.xaml
-/// </summary>
 public partial class MainWindow : Window
 {
     public MainWindow()
     {
         InitializeComponent();
+    }
+
+    private void Browse_Click(object sender, RoutedEventArgs e)
+    {
+        using var dialog = new FolderBrowserDialog();
+
+        if (dialog.ShowDialog() == DialogResult.OK)
+        {
+            FolderBox.Text = dialog.SelectedPath;
+
+            bool valid = LauncherDetector.IsValid(dialog.SelectedPath);
+
+            InstallButton.IsEnabled = valid;
+
+            StatusText.Text = valid
+                ? "? Launcher.exe found"
+                : "? Launcher.exe missing";
+        }
+    }
+
+    private void Install_Click(object sender, RoutedEventArgs e)
+    {
+        MessageBox.Show(
+            "Installing to:\n" + FolderBox.Text
+        );
     }
 }
