@@ -3,3 +3,9 @@ obj/
 *.dll
 *.exe
 *.pdb
+**/bin/
+**/obj/
+*.log
+*.msi
+*.exe
+*.dll
