@@ -1,1 +1,1 @@
-Building Installer.Wix
+Building Installer.Wix hi

@@ -1,5 +1,4 @@
 using System.Windows;
-using Forms = System.Windows.Forms;
 
 namespace Installer.Bootstrapper.UI;
 
@@ -12,26 +11,20 @@ public partial class MainWindow : Window
 
     private void Browse_Click(object sender, RoutedEventArgs e)
     {
-        using var dialog = new Forms.FolderBrowserDialog();
+        var dialog = new Microsoft.Win32.OpenFolderDialog();
 
-        if (dialog.ShowDialog() == Forms.DialogResult.OK)
+        if (dialog.ShowDialog() == true)
         {
-            FolderBox.Text = dialog.SelectedPath;
+            FolderBox.Text = dialog.FolderName;
 
-            bool valid = LauncherDetector.IsValid(dialog.SelectedPath);
+            bool valid = LauncherDetector.IsValid(dialog.FolderName);
 
             InstallButton.IsEnabled = valid;
-
-            StatusText.Text = valid
-                ? "? Launcher.exe found"
-                : "? Launcher.exe missing";
         }
     }
 
     private void Install_Click(object sender, RoutedEventArgs e)
     {
-        System.Windows.MessageBox.Show(
-            "Installing to:\n" + FolderBox.Text
-        );
+        System.Windows.MessageBox.Show("Ready to install Meow.NetX!");
     }
 }

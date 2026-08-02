@@ -12,6 +12,25 @@ string[] watchPaths =
     @"C:\Users\User\Meow.NetX\",
 };
 
+string[] ignoredPaths =
+{
+    @"\.git\",
+    "obj",
+    "auto-git-sync.ps1",
+    "auto-watch-sync.ps1"
+};
+
+bool ShouldIgnore(string path)
+{
+    foreach (var ignored in ignoredPaths)
+    {
+        if (path.Contains(ignored, StringComparison.OrdinalIgnoreCase))
+            return true;
+    }
+
+    return false;
+}
+
 foreach (var path in watchPaths)
 {
     if (!Directory.Exists(path))
@@ -21,21 +40,31 @@ foreach (var path in watchPaths)
     {
         IncludeSubdirectories = true,
         NotifyFilter = NotifyFilters.FileName |
-                       NotifyFilters.LastWrite
+                       NotifyFilters.LastWrite |
+                       NotifyFilters.Size
     };
 
     watcher.Changed += (s, e) =>
     {
+        if (ShouldIgnore(e.FullPath))
+            return;
+
         currentStatus = $"Edited {Path.GetFileName(e.FullPath)}";
     };
 
     watcher.Created += (s, e) =>
     {
+        if (ShouldIgnore(e.FullPath))
+            return;
+
         currentStatus = $"Created {Path.GetFileName(e.FullPath)}";
     };
 
     watcher.Renamed += (s, e) =>
     {
+        if (ShouldIgnore(e.FullPath))
+            return;
+
         currentStatus = $"Renamed {Path.GetFileName(e.FullPath)}";
     };
 
@@ -48,17 +77,19 @@ while (true)
     {
         Details = "Working on Meow.NetX",
         State = currentStatus,
+
         Assets = new Assets
         {
             LargeImageKey = "meowmeowlogo",
-            LargeImageText = "meowmeowlogo"
+            LargeImageText = "Meow.NetX"
         },
-    Buttons = new[]
-    {
-        new Button
+
+        Buttons = new[]
         {
-            Label = "Check Out The PROJECT!!!",
-            Url = "https://github.com/AlexFLAVIUS35/Meow.NetX/"
+            new DiscordRPC.Button
+            {
+                Label = "Check Out The PROJECT!!!",
+                Url = "https://github.com/AlexFLAVIUS35/Meow.NetX/"
             }
         }
     });
