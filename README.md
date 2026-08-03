@@ -8,7 +8,7 @@ An Open-Source Plugin Which Enhances Meow.Net Launcher.
 
 </div>
 
-![Alternative text](https://github.com/AlexFLAVIUS35/Meow.NetX/blob/41f22d9b2d732f9cb98aa99b7517a04f58685b69/meowmeowlogo%20.png)
+![Alternative text](https://github.com/AlexFLAVIUS35/Meow.NetX/blob/0cb5db9d4e8606975592e46440787dd4f0816d34/meowmeowlogo.png)
 <sub>Thanks To @dipsydispy for the amazing thumbnail.
 
 Improvements over the original meow.net launcher featuring more features (WIP)
